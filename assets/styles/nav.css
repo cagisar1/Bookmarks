@@ -1,0 +1,413 @@
+header,
+footer{
+    width: 100%;
+    min-height: 55px;
+    background-image: linear-gradient(to right,
+                                    var(--clr-green-900) 10%,
+                                    var(--clr-green-600) 20%,
+                                    var(--clr-green-300) 50%,
+                                    var(--clr-green-600) 80%,
+                                    var(--clr-green-900) 90%);
+}
+
+header{
+    position: fixed;
+    top: 0;
+    z-index: 20;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+/* Class used to toggle transparency on the header's background */
+
+.scrolled{
+    background-image: linear-gradient(to right,
+                                    var(--clr-green-900-op) 10%,
+                                    var(--clr-green-600-op) 20%,
+                                    var(--clr-green-300-op) 50%,
+                                    var(--clr-green-600-op) 80%,
+                                    var(--clr-green-900-op) 90%);
+}
+/*  */
+
+.scrolled:hover,
+.scrolled:focus{
+    background-image: linear-gradient(to right,
+                                    var(--clr-green-900) 10%,
+                                    var(--clr-green-600) 20%,
+                                    var(--clr-green-300) 50%,
+                                    var(--clr-green-600) 80%,
+                                    var(--clr-green-900) 90%);
+}
+
+a{
+    text-decoration: none !important;
+}
+
+.menu{
+    padding: 0 2.5%;
+    max-width: 1700px;
+    margin: 0 auto;
+    height: 55px;
+    border-bottom: 1px solid var(--clr-light);
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.menu__logo{
+    margin: 0 auto;
+    padding: 0.5rem 1rem 0.5rem 0;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--clr-light);
+}
+
+.menu__list{
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem 0;
+    width: 100%;
+
+    color: var(--clr-light);
+    background-image: linear-gradient(to right,
+                                    var(--clr-green-900) 10%,
+                                    var(--clr-green-600) 20%,
+                                    var(--clr-green-300) 50%,
+                                    var(--clr-green-600) 80%,
+                                    var(--clr-green-900) 90%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+
+    position: absolute;
+    top: 55px;
+    left: -100%;
+    z-index: 3;
+
+    max-height: 90vh;
+    overflow-y: scroll;
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10*/
+
+    transition: all  0.4s ease-in-out;
+}
+
+.menu__list::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+/* class to show the menu when hamburger clicked */
+.menu__list.opened{
+    left: 0;
+}
+/*  */
+
+.menu__item{
+    width: 100%;
+    text-align: center;
+}
+
+.menu__link{
+    padding: 0.8rem 0.6rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--clr-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: all .2s ease-in;
+}
+
+.menu__item--form{
+    border-radius: 10px !important;
+    margin: 1rem 0;
+}
+
+.menu__search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+ }
+
+.form-control[type="search"]{
+    padding: .3rem .75rem;
+    max-width: 200px;
+}
+
+.form-control[type="search"]:focus {
+    color: var(--clr-green-900);
+    border: #fff;
+    box-shadow: -1px -1px 4px #fff,
+                1px 1px 4px #fff;
+
+    transition: all 200ms ease-in-out;
+}
+
+.shiny-item:hover,
+.shiny-item:focus{
+    text-shadow: 1px 1px 5px var(--clr-light),
+                 -1px -1px 5px var(--clr-light);
+}
+
+.framed-item{
+    padding: 0.5rem 0.75rem !important;
+    border: 1px solid var(--clr-light);
+    border-radius: 10px;
+}
+
+.framed-item--dif{
+    text-transform: none;
+    padding: 0.3rem 0.75rem !important;
+}
+
+.framed-item.shiny-item:focus,
+.framed-item.shiny-item:hover{
+    box-shadow: 0px 0.5px 4px var(--clr-light),
+                0px -0.5px 4px var(--clr-light);
+}
+
+.help{
+    margin-bottom: 0.5rem;
+}
+
+.sign-in,
+.register{
+    margin: 0.2rem;
+}
+
+.btn-group a{
+    cursor: pointer;
+}
+
+/* Dropdown menu - Categories */
+.dropdown_menu{
+    max-height: 0;
+    overflow: hidden;
+
+    background-color: linear-gradient(to right,
+                                    var(--clr-green-900) 10%,
+                                    var(--clr-green-600) 20%,
+                                    var(--clr-green-300) 50%,
+                                    var(--clr-green-600) 80%,
+                                    var(--clr-green-900) 90%);
+
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+
+    transition: all 0.4s ease-in-out;
+}
+
+.reset{
+    display: inline-block;
+    padding: 0.6rem;
+    color: var(--clr-light);
+    border: 1px solid var(--clr-light);
+    text-shadow: 2px 2px 3px var(--clr-green-900),
+                -2px -2px 3px var(--clr-green-900);
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.reset:hover,
+.reset:focus{
+    background-color: var(--clr-light);
+    text-shadow: 1.5px 1.5px 3px var(--clr-green-900),
+                -1.5px -1.5px 3px var(--clr-green-900);
+}
+
+.expanded{
+    background: rgba(0,0,0,0.2);
+    max-height: 500px;
+    margin: 1rem auto 0;
+    padding: 1rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.fa-caret-down{
+    transition: transform 0.4s ease-in-out;
+    font-size: 0.8em !important;
+    transform: translateY(-2px);
+}
+
+.upside_down{
+    transform: rotate(180deg);
+}
+/*  */
+
+/* Menu toggler */
+
+.menu-toggler{
+    display: block;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-radius: 20%;
+}
+/*  */
+
+/* Hamburger appearance (those 3 lines) */
+
+.hamburger{
+    position: relative;
+    width: 17px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after{
+    margin: 0 auto;
+    display: block;
+    height: 2px;
+    background-color: var(--clr-light);
+
+    transition: transform 0.3s ease-in-out,
+                opacity 0s;
+}
+
+.hamburger::before,
+.hamburger::after{
+    content: '';
+    position: absolute;
+}
+
+.hamburger::before{
+    width: 22px;
+    transform: translateY(-5.5px);
+}
+
+.hamburger::after{
+    width: 12px;
+    transform: translateY(5.5px);
+}
+/*  */
+
+/* Changing the hamburger appearance (from hamburger to X)*/
+
+.menu-toggler.active .hamburger{
+    width: 22px;
+    transform: rotate(-45deg);
+}
+
+.menu-toggler.active .hamburger::after{
+    opacity: 0;
+}
+
+.menu-toggler.active .hamburger::before{
+    width: 100%;
+    transform: rotate(90deg) translateY(0);
+}
+/*  */
+
+/* Dark overlay on the main content when hamburger clicked
+disabling functionality of the main content until a link it's clicked or until the menu is closed */
+
+header[data-overlay]::after{
+    content:'';
+    position: fixed;
+    inset: 0;
+    top: 55px;
+    background-color: rgb(0,0,0, 0.5);
+    z-index: 2;
+}
+/*  */
+
+
+@media(min-width: 950px){
+    html{
+        font-size: 13.5px;
+    }
+
+    .menu__item{
+        width: auto;
+        text-align: default;
+    }
+
+    .menu-toggler{
+        display: none;
+    }
+
+    .menu__logo{
+        flex: 1 0 auto;
+    }
+
+    .menu__list{
+        width: 90%;
+        background-image: none;
+        position: static;
+        flex-direction: row;
+        justify-content: start;
+        gap: 0.5rem;
+    }
+
+    .menu__link{
+        padding: 0.6rem 0.4rem;
+    }
+
+    .help{
+        margin-bottom: 0;
+    }
+
+    .dropdown_menu{
+        position: absolute;
+        transform: translateY(10px);
+        gap: 0.7rem;
+    }
+
+    .reset{
+        padding: 0.6rem;
+        width: 100%;
+    }
+
+    .expanded{
+        margin:0;
+        transform: translateY(20px);
+        background-color: var(--clr-green-600);
+    }
+
+    .sign-in,
+    .register{
+        margin: 0;
+    }
+
+    .menu__item--right{
+        margin-left: auto;
+    }
+
+    .menu__link.account{
+        margin-left: 1rem;
+    }
+
+    header[data-overlay]::after{
+        display: none;
+    }
+}
+
+
+@media (min-width: 1200px){
+    html{
+        font-size: 17px;
+    }
+}
